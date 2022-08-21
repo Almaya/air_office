@@ -6,4 +6,10 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  validates :username, presence: true, uniqueness: true, length: { minimum: 4 }
+  validates :email, presence: true, uniqueness: true, format: { with: /\A[\w.]+\w+@[\w.]+\.[\w.]+\w{2,}\z/,
+    message: "please enter a valid email" }
+  validates :password, presence: true, length: { minimum: 6 }
+
 end
