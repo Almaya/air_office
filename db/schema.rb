@@ -10,9 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_22_131819) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_22_132819) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.boolean "confirmed"
+    t.bigint "user_id", null: false
+    t.bigint "workspace_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+    t.index ["workspace_id"], name: "index_bookings_on_workspace_id"
+  end
 
   create_table "installs", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -38,4 +50,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_22_131819) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "workspaces", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "neighborhood"
+    t.float "price"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_workspaces_on_user_id"
+  end
+
+  add_foreign_key "bookings", "users"
+  add_foreign_key "bookings", "workspaces"
+  add_foreign_key "workspaces", "users"
 end
