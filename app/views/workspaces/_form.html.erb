@@ -1,0 +1,13 @@
+<%= form_with model: workspace do |w| %>
+  <%= w.label :name %>
+  <%= w.text_field :name %>
+  <%= w.label :address %>
+  <%= w.text_field :address %>
+  <%= w.label :neighborhood %>
+  <%= w.text_field :neighborhood %>
+  <%= w.label :price %>
+  <%= w.number_field :price %>
+  <%= w.label :user %>
+  <%= w.text_field :user %>
+  <%= w.submit %>
+<% end %>
