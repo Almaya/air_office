@@ -7,8 +7,23 @@
   padding: 40px;
 }
 
+.container {
+  margin: 0 auto;
+}
+
+p {
+  margin-top: 15px;
+  margin-bottom: 3rem;
+}
+
+.card {
+  color: white;
+  border: none;
+}
+
 .card-category {
   height: 300px;
+  border-radius: 20px;
 }
 
 // Smallest device
