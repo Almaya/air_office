@@ -1,0 +1,6 @@
+<%= simple_form_for(@booking, url: bookings_path) do |f| %>
+  <%= f.input :workspace, as: :select, collection: @workspaces, prompt: 'Select workspace' %>
+  <%= f.input :start_date, as: :date, start_date: Date.today %>
+  <%= f.input :end_date, as: :date, start_date: :start_date %>
+  <%= f.submit 'Request to Book' %>
+<% end %>
