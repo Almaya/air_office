@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'workspaces/index'
-  get 'workspaces/show'
-  get 'workspaces/new'
-  get 'workspaces/create'
   devise_for :users
   # devise_for :installs
   root to: "pages#home"
