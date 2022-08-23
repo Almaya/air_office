@@ -1,12 +1,14 @@
 <h1>Workspaces</h1>
 <p>Here you can find all the workspaces</p>
+
 <ul>
   <% @workspaces.each do |workspace| %>
   <li>
-    <%= workspace.id %>
-    <%= workspace.name %>
-    <%= workspace.neighborhood %>
-    <%= workspace.price %>
+    <%= link_to workspace.name, workspace_path(workspace) %>,
+    <%= workspace.neighborhood %>,
+    <%= workspace.price %>€
   </li>
   <% end %>
+
+  <%= link_to "Add a new working space", new_workspace_path %>
 </ul>
