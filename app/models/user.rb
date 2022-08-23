@@ -8,7 +8,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :username, presence: true, uniqueness: true, length: { minimum: 4 }
-  validates :email, presence: true, uniqueness: true, format: { with: /\A[\w.]+\w+@[\w.]+\.[\w.]+\w{2,}\z/, message: 'please enter a valid email' }
+
+  validates :email, presence: true, uniqueness: true, format: { with: /\A[\w.]+\w+@[\w.]+\.[\w.]+\w{2,}\z/,
+    message: "must be a valid email address" }
+
   validates :password, presence: true, length: { minimum: 6 }
 end
-
