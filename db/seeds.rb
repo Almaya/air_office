@@ -8,14 +8,17 @@ require 'faker'
 #   Character.create(name: "Luke", movie: movies.first)
 emails = ["alice@gmail.com", "tom@gmail.com", "maya@outlook.com", "thib@gmail.com", "sonja@outlook.com"]
 
+Booking.destroy_all
+Workspace.destroy_all
+User.destroy_all
+
 emails.each do |email|
   username = Faker::Esport.player
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
   phone_number = Faker::PhoneNumber.phone_number
   password = "123456"
-  User.create(username: username, first_name: first_name, last_name: last_name,
-    phone_number: phone_number, email: email, password: password)
+  User.create(username, first_name, last_name, phone_number, email, password)
 end
 
 neighborhoods = %w[Gracia Raval Gotico Montjuic Eixample]
@@ -25,5 +28,5 @@ neighborhoods = %w[Gracia Raval Gotico Montjuic Eixample]
   neighborhood = neighborhoods.sample
   price = rand(50..100)
   user = User.all.sample
-  Workspace.create(name: name, address: address, neighborhood: neighborhood, price: price, user: user)
+  Workspace.create(name, address, neighborhood, price, user)
 end
