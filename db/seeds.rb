@@ -6,7 +6,6 @@ require 'faker'
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-# comment
 emails = ["alice@gmail.com", "tom@gmail.com", "maya@outlook.com", "thib@gmail.com", "sonja@outlook.com"]
 
 emails.each do |email|
