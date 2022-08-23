@@ -1,2 +1,7 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
+<h2>Congratulations! Your booking has been confirmed. </h2>
+<h3>Booking <%= @booking.id %> for <%= @booking.workspace.name %></h3>
+<h4>Start date: <%= @booking.start_date %></h4>
+<h4>End date: <%= @booking.end_date %></h4>
+<hr>
+<%= link_to 'Back to Workspace Page', workspace_path(@booking.workspace) %>
+<%= link_to 'Back to Main Page', root_path %>

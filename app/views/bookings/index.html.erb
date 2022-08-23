@@ -6,11 +6,16 @@
     <% @bookings.each do |booking| %>
       <% user = User.find(booking.user.id) %>
       <li>
-        <div class="booking">Booked by: <%= user.username %>
-          from <%= booking.start_date %> to <%= booking.end_date %>
-          status: <%= booking.confirmed ? 'confirmed' : 'not yet confirmed' %>
+        <div class="booking">
+          <p>Booked by: <%= user.username %>
+            from <%= booking.start_date %> to <%= booking.end_date %>
+            status: <%= booking.confirmed ? 'confirmed' : 'not yet confirmed' %>
+            <%= link_to 'Cancel Booking', workspace_booking_path(booking.workspace, booking),
+                data: { turbo_method: "delete", turbo_confirm: "Cancel booking?" } %>
+          </p>
         </div>
       </li>
     <% end %>
   </ul>
 <% end %>
+<%= link_to 'Book this workspace', new_workspace_booking_path(@workspace) %>
