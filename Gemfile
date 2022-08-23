@@ -65,6 +65,8 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
+  #Use faker for seed
+  gem "faker"
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
   gem 'bootstrap-sass', '~> 3.3.6'
