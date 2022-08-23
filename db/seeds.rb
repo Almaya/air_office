@@ -18,3 +18,13 @@ emails.each do |email|
   User.create(username: username, first_name: first_name, last_name: last_name,
     phone_number: phone_number, email: email, password: password)
 end
+
+neighborhoods = %w[Gracia Raval Gotico Montjuic Eixample]
+10.times do
+  name = Faker::Coffee.blend_name
+  address = Faker::Address.street_address
+  neighborhood = neighborhoods.sample
+  price = rand(50..100)
+  user = User.all.sample
+  Workspace.create(name: name, address: address, neighborhood: neighborhood, price: price, user: user)
+end
