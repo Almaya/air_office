@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :workspaces do
-    resources :bookings, except: :show
+    resources :bookings
   end
 end
