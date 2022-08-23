@@ -6,19 +6,22 @@ require 'faker'
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-emails = ["alice@gmail.com", "tom@gmail.com", "maya@outlook.com", "thib@gmail.com", "sonja@outlook.com"]
 
 Booking.destroy_all
 Workspace.destroy_all
 User.destroy_all
 
+emails = ["alice@gmail.com", "tom@gmail.com", "maya@outlook.com", "thib@gmail.com", "sonja@outlook.com"]
 emails.each do |email|
-  username = Faker::Esport.player
+  username = "#{Faker::Internet.user_name}#{rand(1..99)}"
+  username = "#{Faker::Internet.user_name}#{rand(1..99)}" while username.length < 4
+
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
   phone_number = Faker::PhoneNumber.phone_number
   password = "123456"
-  User.create(username, first_name, last_name, phone_number, email, password)
+  User.create!(username:, first_name:, last_name:,
+               phone_number:, email:, password:)
 end
 
 neighborhoods = %w[Gracia Raval Gotico Montjuic Eixample]
@@ -28,5 +31,16 @@ neighborhoods = %w[Gracia Raval Gotico Montjuic Eixample]
   neighborhood = neighborhoods.sample
   price = rand(50..100)
   user = User.all.sample
-  Workspace.create(name, address, neighborhood, price, user)
+  ws = Workspace.create!(name:, address:, neighborhood:, price:, user:)
+end
+
+workspaces = Workspace.all
+users = User.all
+workspaces.each do |ws|
+  rand_user = users.sample
+  rand_user = users.sample while rand_user == ws.user
+
+  start_date = rand(Date.today..Date.civil(2023, 12, 31))
+  end_date = start_date + rand(1..31)
+  Booking.create!(workspace: ws, user: rand_user, start_date:, end_date:)
 end
