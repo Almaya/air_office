@@ -1,4 +1,4 @@
-<%= simple_form_for(@booking, url: workspace_bookings_path) do |f| %>
+<%= simple_form_for(@booking, **resolve_booking_form_options(@booking)) do |f| %>
   <%= f.input :start_date, as: :date, start_date: Date.today %>
   <%= f.input :end_date, as: :date, start_date: :start_date %>
   <%= f.button :submit %>
