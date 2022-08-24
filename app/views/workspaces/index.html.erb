@@ -7,12 +7,14 @@
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
         </div>
         <div>
-          <p><%= workspace.name %></p>
-          <p><%= workspace.address %></p>
-          <p><%= workspace.neighborhood %></p>
-          <p><%= workspace.price %></p>
+          <%= link_to workspace.name, workspace_path(workspace) %>,
+          <%= workspace.neighborhood %>,
+          <%= workspace.price %>€
         </div>
       </div>
     <% end %>
   </div>
 </div>
+
+
+
