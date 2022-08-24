@@ -1,24 +1,34 @@
-<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<nav class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <nav class="container-fluid">
+    <a class="navbar-menu" href="#"><h1>Air<span>Office.</span></h1></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <%= link_to "Book a Workspace", workspaces_path, class: "btn btn-outline-secondary spacing" %>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
+
+          <% if user_signed_in? %>
+            <li class="nav-item dropdown">
+                  <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                  <%= link_to "Action", "#", class: "dropdown-item" %>
+                  <%= link_to "Another action", "#", class: "dropdown-item" %>
+                  <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+          <% else %>
+                <li class="nav-item">
+                <%= link_to "Sign-Up", new_user_registration_path, class: "btn btn-outline-warning spacing" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "Login", new_user_session_path, class: "btn btn-outline-info spacing", title: "Login" %>
+                </li>
+                </div>
+            </li>
+          <% end %>
+      </div>
       </ul>
-    </div>
+
   </nav>
 </nav>

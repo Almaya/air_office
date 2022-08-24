@@ -20,8 +20,12 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
+    <% if request.path != "/" %>
     <div class="container">
       <%= yield %>
     </div>
+    <% else %>
+      <%= yield %>
+    <% end %>
   </body>
 </html>
