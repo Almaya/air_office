@@ -45,7 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_23_130209) do
   create_table "bookings", force: :cascade do |t|
     t.date "start_date"
     t.date "end_date"
-    t.boolean "confirmed"
+    t.boolean "confirmed", default: false
     t.bigint "user_id", null: false
     t.bigint "workspace_id", null: false
     t.datetime "created_at", null: false
