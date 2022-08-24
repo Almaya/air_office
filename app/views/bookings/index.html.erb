@@ -10,6 +10,7 @@
           <p>Booked by: <%= user.username %>
             from <%= booking.start_date %> to <%= booking.end_date %>
             status: <%= booking.confirmed ? 'confirmed' : 'not yet confirmed' %>
+            <%= link_to 'Edit Booking', edit_workspace_booking_path(booking.workspace, booking) %>
             <%= link_to 'Cancel Booking', workspace_booking_path(booking.workspace, booking),
                 data: { turbo_method: "delete", turbo_confirm: "Cancel booking?" } %>
           </p>
@@ -18,4 +19,5 @@
     <% end %>
   </ul>
 <% end %>
+<%= link_to 'Back to workspace page', workspace_path(@workspace) %>
 <%= link_to 'Book this workspace', new_workspace_booking_path(@workspace) %>
