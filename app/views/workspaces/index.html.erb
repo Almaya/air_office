@@ -2,13 +2,11 @@
 <p>Here you can find all the workspaces</p>
 
 <ul>
-  <% @workspaces.each do |workspace| %>
+   <% @workspaces.each do |workspace| %>
   <li>
     <%= link_to workspace.name, workspace_path(workspace) %>,
     <%= workspace.neighborhood %>,
     <%= workspace.price %>€
-    <%# <%= link_to "Delete coworking space", workspace_path(workspace), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %> %>
-
   </li>
   <% end %>
 
