@@ -19,6 +19,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.workspace = @workspace
+    raise
     if @booking.save
       redirect_to workspace_booking_path(@workspace, @booking), notice: 'Booking successfully created'
     else
