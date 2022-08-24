@@ -1,14 +1,18 @@
-<h1>Workspaces</h1>
-<p>Here you can find all the workspaces</p>
 
-<ul>
-   <% @workspaces.each do |workspace| %>
-  <li>
-    <%= link_to workspace.name, workspace_path(workspace) %>,
-    <%= workspace.neighborhood %>,
-    <%= workspace.price %>€
-  </li>
-  <% end %>
-
-  <%= link_to "Add a new workspace", new_workspace_path %>
-</ul>
+<div class="container-page">
+  <%# <%= render 'shared/card' %>
+  <div class="cards">
+    <% @workspaces.each do |workspace| %>
+      <div class="card">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        </div>
+        <div>
+          <p><%= workspace.name %></p>
+          <p><%= workspace.address %></p>
+          <p><%= workspace.neighborhood %></p>
+          <p><%= workspace.price %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
