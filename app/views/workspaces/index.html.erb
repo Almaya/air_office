@@ -7,7 +7,7 @@
     <%= link_to workspace.name, workspace_path(workspace) %>,
     <%= workspace.neighborhood %>,
     <%= workspace.price %>€
-    <%= link_to "Delete coworking space", workspace_path(workspace), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    <%# <%= link_to "Delete coworking space", workspace_path(workspace), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %> %>
 
   </li>
   <% end %>
