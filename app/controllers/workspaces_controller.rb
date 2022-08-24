@@ -45,7 +45,7 @@ class WorkspacesController < ApplicationController
     @workspace = Workspace.find(params[:id])
     @workspace.destroy
 
-    redirect_to workspaces_path
+    redirect_to workspaces_path, status: :see_other
   end
 
   private
