@@ -1,11 +1,16 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random/?workspaces);">
-  <div class="search-container">
-    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-      <div class="homepage-search">
-        <input class="form-control string required" id="form-control" type="text" name="search[query]" id="search_query" />
-        <button name="button" type="submit" class="btn btn-flat">
-          <i class="fas fa-search"></i> Search
-        </button>
+<div class="container-page">
+  <%# <%= render 'shared/card' %>
+  <div class="cards">
+    <% @workspaces.each do |workspace| %>
+      <div class="card">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        </div>
+        <div>
+          <p><%= workspace.name %></p>
+          <p><%= workspace.address %></p>
+          <p><%= workspace.neighborhood %></p>
+          <p><%= workspace.price %></p>
+        </div>
       </div>
     <% end %>
   </div>
