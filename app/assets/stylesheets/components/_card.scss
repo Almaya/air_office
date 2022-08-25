@@ -5,6 +5,7 @@
   height: 400px;
   grid-gap: 20px;
   padding: 40px;
+
 }
 
 .container-page {
@@ -15,20 +16,48 @@
 }
 
 
-
-.card {
-  color: rgb(255, 255, 255);
-  border: none;
-  p {
-    margin-top: 15px;
-    margin-bottom: 3rem;
-  }
-}
-
 .card-category {
   height: 300px;
   border-radius: 20px;
+  box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45);
+
 }
+
+// .card-category {
+//   color: rgb(255, 255, 255);
+//   border: none;
+//   border-radius: 0.5rem;
+//   box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45);
+//   padding-bottom: 1rem;
+//   overflow: hidden;
+//   background: pink;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+// }
+
+.card-category h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+// .card-category p {
+//   font-size: 12px;
+//   opacity: .7;
+//   margin: 0;
+// }
+
+.card-category .card-info {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+}
+
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {

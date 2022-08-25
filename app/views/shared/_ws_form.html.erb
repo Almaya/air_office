@@ -1,8 +1,12 @@
-<%= simple_form_for @workspace do |w| %>
-  <%= w.input :name %>
-  <%= w.input :address %>
-  <%= w.input :neighborhood %>
-  <%= w.input :price %>
-  <%= w.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= w.button :submit %>
-<% end %>
+<div class="container">
+  <div class="card">
+    <%= simple_form_for @workspace, html: { class: "card-form"} do |w| %>
+      <%= w.input :name, label_html: { class: 'input-label' }, input_html: { class: 'input-field' } %>
+      <%= w.input :address, label_html: { class: 'input-label' }, input_html: { class: 'input-field' } %>
+      <%= w.input :neighborhood, label_html: { class: 'input-label' }, input_html: { class: 'input-field' } %>
+      <%= w.input :price, label_html: { class: 'input-label' }, input_html: { class: 'input-field' } %>
+      <%= w.input :photos, as: :file, input_html: { multiple: true } %>
+      <%= w.button :submit, class: "form-submit" %>
+    <% end %>
+  </div>
+</div>
