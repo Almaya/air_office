@@ -3,6 +3,15 @@ class WorkspacesController < ApplicationController
 
   def index
     @workspaces = Workspace.all
+
+    # Geocoding
+    @markers = @workspaces.geocoded.map do |workspace|
+      {
+        lat: workspace.latitude,
+        lng: workspace.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {workspace: workspace})
+      }
+    end
   end
 
   def show
@@ -57,6 +66,6 @@ class WorkspacesController < ApplicationController
 
 
   def ws_params
-    params.require(:workspace).permit(:name, :address, :neighborhood, :price, photos: [])
+    params.require(:workspace).permit(:name, :address, :neighborhood, :price, :latitude, :longitude, photos: [])
   end
 end
