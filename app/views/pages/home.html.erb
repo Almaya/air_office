@@ -1,10 +1,10 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random/?workspaces);">
   <div class="search-container">
-    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+    <%= simple_form_for :search, url: workspaces_path, method: :get do |f| %>
       <div class="homepage-search">
         <%= form_with url: workspaces_path, method: :get, class: "d-flex" do %>
           <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a Workspace"%>
-          <%= submit_tag "Search", redirect_to workpaces_path, class: "btn btn-primary" %>
+          <%= submit_tag "Search", class: "btn btn-primary" %>
         <% end %>
       </div>
     <% end %>
