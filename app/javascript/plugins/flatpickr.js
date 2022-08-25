@@ -3,7 +3,8 @@ import flatpickr from "flatpickr";
 const initFlatpickr = () => {
   console.log("flatpicker initialized!");
   flatpickr(".datepicker",
-            {altInput: true,
+            {mode: "range",
+             altInput: true,
              minDate: "today"});
 };
 
