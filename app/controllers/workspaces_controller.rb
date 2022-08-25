@@ -3,6 +3,14 @@ class WorkspacesController < ApplicationController
 
   def index
     @workspaces = Workspace.all
+
+    # Geocoding
+    @markers = @workspaces.geocoded.map do |workspace|
+      {
+        lat: workspace.latitude,
+        lng: workspace.longitude
+      }
+    end
   end
 
   def show
