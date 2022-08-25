@@ -127,40 +127,4 @@ strong {
     }
   }
 
-
-.buttons-coll {
-  width: 90%;
-  margin: 50px auto;
-  text-align: center;
-}
-
-a {
-  margin: 20px;
-}
-
-.custom-btn {
-  padding: 10px 25px;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  background: transparent;
-  outline: none !important;
-  cursor: pointer !important;
-  transition: all 0.3s ease;
-  position: absolute;
-  top: 75%;
-  left: 15%;
-  display: flex;
-}
-
-.btn-1 {
-  border: 2px solid #000;
-}
-
-.btn-1:hover {
-  background: #000;
-  color: #fff;
-}
-
-.btn-1:active {
-  top: 2px;
-}
+  

@@ -4,9 +4,7 @@
     </div>
       <h1>The best <strong>workspaces</strong> to work on what <strong>matters</strong>!</h1>
       <p>Change how you work and meet with your collegues in Barcelona.</p>
-      <div class="buttons-coll">
-        <a class="custom-btn btn-1" href="#">Workspaces</a>
-      </div>
+
       <%= simple_form_for :search, url: workspaces_path, method: :get do |f| %>
         <div class="searchBox">
           <input class="searchInput string required" id="form-control" type="text" name="search[query]" id="search_query" />
@@ -18,3 +16,4 @@
       </div>
   </div>
 </div>
+
