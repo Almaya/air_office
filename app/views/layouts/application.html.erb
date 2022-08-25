@@ -11,10 +11,21 @@
   </head>
 
   <body>
-   <%= render "shared/navbar" %>
+   <% if request.path == "/" %>
+      <%= render "shared/nav_menu" %>
+    <% else %>
+      <%= render "shared/navbar" %>
+    <% end %>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <%= yield %>
+    <% if request.path != "/" %>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <% else %>
+      <%= yield %>
+    <% end %>
   </body>
 </html>
