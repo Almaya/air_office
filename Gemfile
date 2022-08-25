@@ -67,15 +67,11 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-
-  #Use faker for seed
-  gem "faker"
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
   gem 'bootstrap-sass', '~> 3.3.6'
   gem 'sass-rails', '>= 3.2'
   gem 'jquery-rails'
-  gem "geocoder"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
@@ -89,5 +85,4 @@ group :test do
 end
 
 # Cloudinary
-gem "dotenv-rails", groups: [:development, :test]
 gem "cloudinary"
