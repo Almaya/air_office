@@ -1,14 +1,20 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1604328703693-18313fe20f3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);">
   <div class="container">
-    <h1>The best <strong>workspaces</strong> to work on what <strong>matters</strong>!</h1>
-    <p>Change how you work and meet with your collegues in Barcelona.</p>
-    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-      <div class="homepage-search">
-        <input class="form-control string required" id="form-control" type="text" name="search[query]" id="search_query" />
-        <button name="button" type="submit" class="btn btn-flat">
-          <i class="fas fa-search"></i> Search
-        </button>
+
+    </div>
+      <h1>The best <strong>workspaces</strong> to work on what <strong>matters</strong>!</h1>
+      <p>Change how you work and meet with your collegues in Barcelona.</p>
+      <div class="buttons-coll">
+        <a class="custom-btn btn-1" href="#">Workspaces</a>
       </div>
-    <% end %>
+      <%= simple_form_for :search, url: workspaces_path, method: :get do |f| %>
+        <div class="searchBox">
+          <input class="searchInput string required" id="form-control" type="text" name="search[query]" id="search_query" />
+          <button name="button" type="submit" class="searchButton">
+            <i class="material-icons"></i><i class="fa-brands fa-searchengin"></i>
+          </button>
+        </div>
+      <% end %>
+      </div>
   </div>
-</div></div>
+</div>
