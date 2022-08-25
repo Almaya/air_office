@@ -4,15 +4,17 @@
   <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
 
-<h3><%= @workspace.neighborhood %>
-<%= @workspace.price %>€</h3>
+<h3><%= @workspace.neighborhood %></h3>
 
-<p><%= @workspace.address %></p>
+<p>Address: <%= @workspace.address %></p>
 
-<p>Hosted by <%= @workspace.user.username %></p>
-
+<p>Hosted by <%= "#{@workspace.user.first_name} #{@workspace.user.last_name}" %>
+<br>Rent for €<%= @workspace.price.round %> per day</p>
 
 <%= link_to "Edit workspace", edit_workspace_path(@workspace)%>
+<br>
 <%= link_to "Delete workspace", workspace_path(@workspace), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-<%= link_to "Back to list page", workspaces_path %>
+<br>
 <%= link_to "Book this workspace", new_workspace_booking_path(@workspace) %>
+<br>
+<%= link_to "Back to list page", workspaces_path %>

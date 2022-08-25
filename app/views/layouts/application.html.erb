@@ -15,13 +15,12 @@
       <%= yield %>
     <% else %>
       <%= render "shared/navbar" %>
-      <div class="">
+      <div class="container">
         <%= yield %>
       </div>
     <% end %>
 
     <% unless request.path == "/" %>
-      <div style="height: 60px;">hello</div>
       <%= render "shared/footer" %>
     <% end %>
   </body>

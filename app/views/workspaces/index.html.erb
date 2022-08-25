@@ -3,9 +3,9 @@
 
 <%# <div class="container-page"> %>
 <div class="containerarbi">
-  <div class="cards">
+  <div class="ws-cards">
     <% @workspaces.each do |workspace| %>
-      <div class="card">
+      <div class="ws-card">
         <% if workspace.photos.attached? %>
           <div class="card-category image"
               style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
@@ -35,6 +35,5 @@
       </div>
     <% end %>
   </div>
-
 </div>
 <%# </div> %>
