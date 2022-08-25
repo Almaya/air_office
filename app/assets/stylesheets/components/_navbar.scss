@@ -1,3 +1,5 @@
+@import "_globals";
+
 .navbar-lewagon {
   justify-content: center space-between;
   background: white;
@@ -37,7 +39,7 @@
 
 
 .search-form-control .form-control {
-  height: 3.5rem;
+  height: $searchBoxHeight;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   border: 1px solid #E7E7E7;
   align-content: center;
@@ -76,15 +78,14 @@
 }
 
 .navbar {
-  // position: fixed;
+  position: fixed;
   top: 0;
   width: 100%;
-  // z-index:1;
+  z-index:1;
   border-bottom:1px solid #adb5bd;
 }
 
 
 .navbar-nav .dropdown-menu {
   z-index: 1;
-
 }
