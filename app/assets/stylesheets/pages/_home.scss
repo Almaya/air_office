@@ -1,7 +1,4 @@
 // Specific CSS for your home-page
-@import "../components/globals";
-
-$navbarHeight: $searchBoxHeight + 4rem;
 
 * {
   margin: 0;
@@ -51,8 +48,4 @@ $navbarHeight: $searchBoxHeight + 4rem;
 
 strong {
   color: white;
-}
-
-.container {
-  margin-top: $navbarHeight;
 }

@@ -1,6 +1,13 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "../components/globals";
 
-.cards {
+$navbarHeight: $searchBoxHeight + 4rem;
+
+.container {
+  margin-top: $navbarHeight;
   margin-bottom: 100px;
+  padding-bottom: 60px;
+  height: fit-content;
+  display: block;
 }

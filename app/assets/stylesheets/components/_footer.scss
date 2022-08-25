@@ -2,7 +2,9 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  overflow: hidden;
+  // overflow: hidden;
   background-color: white;
-  z-index: 1;
+  // z-index: 1;
+  display: block;
+  margin-top: 60px;
 }
