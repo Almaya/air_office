@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
+    @booking = Booking.new(parse_booking_dates)
     @booking.user = current_user
     @booking.workspace = @workspace
     if @booking.save
@@ -30,7 +30,7 @@ class BookingsController < ApplicationController
   end
 
   def update
-    if @booking.update(booking_params)
+    if @booking.update(parse_booking_dates)
       redirect_to workspace_booking_path(@workspace, @booking), notice: 'Booking successfully updated'
     else
       render :new, status: :unprocessable_entity
@@ -54,6 +54,11 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date)
+  end
+
+  def parse_booking_dates
+    date_range = booking_params[:start_date].split
+    { start_date: date_range[0], end_date: date_range[2] }
   end
 end

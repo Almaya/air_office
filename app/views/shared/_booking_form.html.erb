@@ -1,5 +1,4 @@
 <%= simple_form_for(@booking, **resolve_booking_form_options(@booking)) do |f| %>
-  <%= f.input :start_date, as: :date, start_date: Date.today %>
-  <%= f.input :end_date, as: :date, start_date: :start_date %>
+  <%= f.input :start_date, as: :string, label: 'Dates', input_html: {class: "datepicker"} %>
   <%= f.button :submit %>
 <% end %>
