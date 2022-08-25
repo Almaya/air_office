@@ -12,6 +12,8 @@
   width: 40px;
 }
 
+
+
 .navbar-lewagon .navbar-brand img {
   max-width: 1300px;
   margin: auto;
@@ -44,6 +46,10 @@
   padding: 5px;
   margin: 10px;
   color: #033249;
+
+  display: flex;
+  align-items: center;
+
 }
 
 
@@ -51,6 +57,7 @@
   border: 1px solid #1EDD88;
   outline: none !important;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+
 }
 
 .navbar span {
@@ -69,9 +76,15 @@
 }
 
 .navbar {
-  position: fixed;
+  // position: fixed;
   top: 0;
   width: 100%;
-  overflow: hidden;
-  z-index:1;
+  // z-index:1;
+  border-bottom:1px solid #adb5bd;
+}
+
+
+.navbar-nav .dropdown-menu {
+  z-index: 1;
+
 }
