@@ -4,7 +4,7 @@
       <div class="homepage-search">
         <%= form_with url: workspaces_path, method: :get, class: "d-flex" do %>
           <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a Workspace"%>
-          <%= submit_tag "Search", class: "btn btn-primary" %>
+          <%= submit_tag "Search", redirect_to workpaces_path, class: "btn btn-primary" %>
         <% end %>
       </div>
     <% end %>

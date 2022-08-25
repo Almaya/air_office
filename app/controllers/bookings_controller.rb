@@ -4,11 +4,6 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = @workspace.bookings
-    if params[:query].present?
-      @workspaces = Workspace.where(name: params[:query])
-    else
-      @workspaces = Workspace.all
-    end
   end
 
   def show
