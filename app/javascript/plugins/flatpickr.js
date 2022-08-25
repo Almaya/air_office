@@ -5,7 +5,8 @@ const initFlatpickr = () => {
   flatpickr(".datepicker",
             {mode: "range",
              altInput: true,
-             minDate: "today"});
+             minDate: "today",
+             maxDate: new Date().fp_incr(365)});
 };
 
 export { initFlatpickr };
