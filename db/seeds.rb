@@ -11,6 +11,14 @@ Booking.destroy_all
 Workspace.destroy_all
 User.destroy_all
 
+# Add team users to database
+User.create!(username: 'tulip', first_name: 'Maya', last_name: 'Eyal',
+             phone_number: '0004445556', email: 'tulip@airoffice.com', password: '123456')
+User.create!(username: 'alice', first_name: 'Alice', last_name: 'Bardon Catineau',
+             phone_number: '012345678', email: 'alice@airoffice.com', password: '123456')
+User.create!(username: 'timothy', first_name: 'Timothy', last_name: 'Olaonipekun Omoniyi',
+             phone_number: '14756538739', email: 'tim@airoffice.com', password: '123456')
+
 emails = ["alice@gmail.com", "tom@gmail.com", "maya@outlook.com", "thib@gmail.com", "sonja@outlook.com"]
 emails.each do |email|
   username = "#{Faker::Internet.user_name}#{rand(1..99)}"

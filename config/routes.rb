@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :workspaces do
-    resources :bookings
+    resources :bookings, only: %i[create new]
   end
+  resources :bookings, except: %i[create new]
 end
