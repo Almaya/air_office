@@ -1,4 +1,4 @@
 <%= simple_form_for [@workspace, @booking] do |f| %>
   <%= f.input :start_date, as: :string, label: 'Dates', input_html: {class: "datepicker"} %>
-  <%= f.button :submit %>
+  <%= f.button :submit, class: "booking-submit" %>
 <% end %>
