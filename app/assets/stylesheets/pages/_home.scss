@@ -43,10 +43,13 @@ $navbarHeight: $searchBoxHeight + 4rem;
   background: #043249;
   transition: background 0.3s ease;
   text-decoration: none;
+  position: absolute;
+  top: 63%;
+  left: 14%;
 }
 
 .banner a:hover {
-  background: #03283a;
+  background: #BABABA;
   color: white;
 }
 
@@ -56,4 +59,74 @@ strong {
 
 .container {
   margin-top: $navbarHeight;
+}
+
+.searchBox {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform:  translate(-50%,50%);
+  background: #2f3640;
+  height: 50px;
+  border-radius: 50px;
+  padding: 10px;
+
+}
+
+
+.searchBox:hover > .searchButton {
+  background: #2f3640;
+  color : #2f3640;
+}
+
+.searchButton {
+  align-items: center;
+  text-align: center;
+  color: yellow;
+  float: right;
+  width: 50px;
+  height: 50px;
+  margin: -9px;
+  padding: 10px;
+  border-radius: 50%;
+  background: #2f3640;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+
+.searchInput {
+  border:none;
+  background: none;
+  outline:none;
+  float:left;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 32px;
+  height: 32px;
+  width: 0px;
+
+}
+
+.searchInput:focus {
+  background-color: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.searchBox:hover > .searchInput {
+  width: 250px;
+  padding: 0 6px;
+}
+
+@media screen and (max-width: 620px) {
+  .searchBox:hover > .searchInput {
+    width: 150px;
+    padding: 0 6px;
+  }
 }

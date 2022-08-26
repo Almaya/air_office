@@ -8,6 +8,25 @@
   <div class="card-price">
     <h1><%= @workspace.price %>€/day</h1>
   </div>
+
+
+    <div class="image-container">
+    <% @workspace.photos.each do |photo| %>
+      <div class="images">
+          <%= cl_image_tag photo.key, crop: :fill %>
+      </div>
+    <% end %>
+</div>
+
+
+<div class="card-intro">
+  <div class="card-title">
+    <h1><%= @workspace.name %></h1>
+  </div>
+  <div class="card-price">
+    <h3><%= @workspace.neighborhood %>
+    <%= @workspace.price %>€</h3>
+  </div>
 </div>
 
 

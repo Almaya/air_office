@@ -2,8 +2,13 @@ class WorkspacesController < ApplicationController
   # before_action :workspace_id
 
   def index
-    @workspaces = Workspace.all
 
+    if params[:query].present?
+      @workspaces = Workspace.global_search(params[:query])
+    else
+      @workspaces = Workspace.all
+    end
+    
     # Geocoding
     @markers = @workspaces.geocoded.map do |workspace|
       {
