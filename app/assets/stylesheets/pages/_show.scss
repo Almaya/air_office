@@ -1,0 +1,122 @@
+// Specific CSS for your home-page
+@import "../components/globals";
+
+.image-container{
+  width: 0 auto;
+  height: 400px;
+  background-color: pink;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: rgba(99, 99, 99, 117%) 0px 2px 8px 0px;
+}
+
+.images {
+  height: 100%;
+  flex-grow: 1;
+  img {
+    max-width: 100%;
+    height: 100%;
+    border: 2px solid white;
+  }
+}
+
+.card-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+.card-infos {
+  padding: 16px 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  p {
+    font-style: bold;
+  }
+}
+
+
+// Btn
+
+.back-btn {
+  color: #043249;
+  padding: 4px;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  text-align: left;
+  opacity: 0.6;
+
+
+}
+
+.back-btn:hover {
+  opacity: 1;
+  color: #03283a;
+  border-bottom: 1px solid #043249;
+
+}
+
+.show-btn {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.book-btn {
+  color: white;
+  padding: 14px 26px;
+  border-radius: 4px;
+  background: #043249;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  margin: 5px;
+  text-align: center;
+
+}
+.book-btn:hover {
+  background: #03283a;
+  color: white;
+  font-weight: bold;
+
+}
+
+
+.edit-btn {
+  color: #043249;
+  padding: 7px 46px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  margin: 5px;
+  border: 1px solid #043249;
+  text-align: center;
+
+}
+.edit-btn:hover {
+  opacity: 1;
+  color: #03283a;
+  font-weight: bold;
+  border: 2px solid #043249;
+
+}
+
+
+.delete-btn {
+  color: #043249;
+  padding: 7px 46px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  margin: 5px;
+  border: 1px solid #043249;
+  text-align: center;
+
+}
+.delete-btn:hover {
+  color: red;
+  border: 2px solid red;
+}
