@@ -70,15 +70,11 @@ strong {
 
 }
 
-.searchBox:hover > .searchInput {
-  width: 250px;
-  padding: 0 6px;
-}
 
 .searchBox:hover > .searchButton {
   background: #2f3640;
   color : #2f3640;
-  }
+}
 
 .searchButton {
   align-items: center;
@@ -118,12 +114,16 @@ strong {
   margin-left: auto;
   margin-right: auto;
   position: relative;
+}
 
+.searchBox:hover > .searchInput {
+  width: 250px;
+  padding: 0 6px;
 }
 
 @media screen and (max-width: 620px) {
   .searchBox:hover > .searchInput {
-      width: 150px;
-      padding: 0 6px;
-    }
+    width: 150px;
+    padding: 0 6px;
   }
+}
