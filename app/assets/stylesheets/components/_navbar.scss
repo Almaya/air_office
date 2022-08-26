@@ -1,9 +1,11 @@
 @import "_globals";
 
+
 .navbar-lewagon {
   justify-content: center space-between;
   background: white;
 }
+
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
@@ -12,6 +14,7 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+
 }
 
 
@@ -81,7 +84,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index:1;
+  z-index: 9999;
   border-bottom:1px solid #adb5bd;
 }
 
