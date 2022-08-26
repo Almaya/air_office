@@ -1,8 +1,17 @@
-<h1><%= @workspace.name %></h1>
+<%= link_to "Back to list page", workspaces_path, class:"back-btn" %>
 
-<% @workspace.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+<div class="card-intro">
+  <div class="card-title">
+    <h1><%= @workspace.name %></h1>
+  </div>
+  <div class="card-price">
+    <div class="image-container">
+    <% @workspace.photos.each do |photo| %>
+      <div class="images">
+          <%= cl_image_tag photo.key, crop: :fill %>
+      </div>
+    <% end %>
+</div>
 
 <h3><%= @workspace.neighborhood %>
 <%= @workspace.price %>€</h3>
@@ -12,7 +21,14 @@
 <p>Hosted by <%= @workspace.user.username %></p>
 
 
-<%= link_to "Edit workspace", edit_workspace_path(@workspace)%>
-<%= link_to "Delete workspace", workspace_path(@workspace), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-<%= link_to "Back to list page", workspaces_path %>
-<%= link_to "Book this workspace", new_workspace_booking_path(@workspace) %>
+<div class="card-infos">
+  <div class="infos">
+    <p><%= @workspace.address %></p>
+    <p>Hosted by <%= @workspace.user.username %></p>
+  </div>
+  <div class="show-btn">
+      <%= link_to "Book this workspace", new_workspace_booking_path(@workspace), class:"book-btn" %>
+      <%= link_to "Edit workspace", edit_workspace_path(@workspace), class:"edit-btn"%>
+      <%= link_to "Delete workspace", workspace_path(@workspace), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"delete-btn" %>
+  </div>
+</div>
