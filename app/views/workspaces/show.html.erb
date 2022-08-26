@@ -6,6 +6,10 @@
     <h1><%= @workspace.name %></h1>
   </div>
   <div class="card-price">
+    <h1><%= @workspace.price %>€/day</h1>
+  </div>
+
+
     <div class="image-container">
     <% @workspace.photos.each do |photo| %>
       <div class="images">
@@ -36,8 +40,8 @@
 
 <div class="card-infos">
   <div class="infos">
-    <p><%= @workspace.address %></p>
-    <p>Hosted by <%= @workspace.user.username %></p>
+    <h5><%= @workspace.address %></h5>
+    <h5><%= @workspace.neighborhood %> - Hosted by <%= @workspace.user.username %></h5>
   </div>
   <div class="show-btn">
       <%= link_to "Book this workspace", new_workspace_booking_path(@workspace), class:"book-btn" %>
