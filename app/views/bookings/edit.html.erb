@@ -1,2 +1,2 @@
-<h2>Edit Booking for <%= @workspace.name %></h2>
-<%= render 'shared/booking_form', booking: @booking %>
+<h2>Edit Booking for <%= @booking.workspace.name %></h2>
+<%= render 'shared/booking_form', workpsace: @booking.workspace, booking: @booking %>
