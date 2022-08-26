@@ -38,11 +38,14 @@ $navbarHeight: $searchBoxHeight + 4rem;
 
 .banner a {
   color: white;
-  padding: 8px 24px;
+  padding: 12px 15px;
   border-radius: 4px;
   background: #BABABA;
   transition: background 0.3s ease;
   text-decoration: none;
+  position: absolute;
+  top: 63%;
+  left: 14%;
 }
 
 .banner a:hover {
@@ -99,7 +102,7 @@ strong {
   outline:none;
   float:left;
   padding: 0;
-  color: #2f3640;
+  color: white;
   font-size: 16px;
   transition: 0.4s;
   line-height: 32px;
