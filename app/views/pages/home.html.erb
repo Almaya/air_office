@@ -2,6 +2,22 @@
   <div class="container">
     <h1>The best <strong>workspaces</strong> to work on what <strong>matters</strong>!</h1>
     <p>Change how you work and meet with your collegues in Barcelona.</p>
-    <%= link_to "Find a workspace", workspaces_path %>
+    <%= link_to 'Find Workspaces', workspaces_path(@workspaces) %>
   </div>
-</div></div>
+
+
+
+
+      <%= simple_form_for :search, url: workspaces_path, method: :get do |f| %>
+        <div class="searchBox">
+          <%# <input class="searchInput string required" id="form-control" type="text" name="search[query]" id="search_query" /> %>
+            <%#= form_with url: workspaces_path, method: :get, class: "searchInput" do %>
+            <%= text_field_tag :query, params[:query], class: "searchInput" %>
+            <%= button_tag type: "Submit", class: "searchButton"  do %>
+              <i class="material-icons"></i><i class="fa-brands fa-searchengin"></i>
+            <% end %>
+        </div>
+      <% end %>
+      </div>
+  </div>
+</div>
