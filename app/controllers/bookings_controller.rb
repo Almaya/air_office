@@ -3,7 +3,10 @@ class BookingsController < ApplicationController
   before_action :find_booking, only: %i[show edit update]
 
   def index
-    @bookings = @workspace.bookings
+    bookings = Booking.all
+    @user_bookings = bookings.filter do |booking|
+      booking.user == current_user
+    end
   end
 
   def show
