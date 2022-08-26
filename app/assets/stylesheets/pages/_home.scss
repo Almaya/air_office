@@ -76,7 +76,7 @@ strong {
 }
 
 .searchBox:hover > .searchButton {
-  background: #fff;
+  background: #2f3640;
   color : #2f3640;
   }
 
@@ -103,10 +103,11 @@ strong {
   outline:none;
   float:left;
   padding: 0;
-  color: white;
+  color: #2f3640;
   font-size: 16px;
   transition: 0.4s;
-  line-height: 50px;
+  line-height: 32px;
+  height: 32px;
   width: 0px;
 
 }
@@ -126,5 +127,3 @@ strong {
       padding: 0 6px;
     }
   }
-
-  
