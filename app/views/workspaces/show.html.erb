@@ -5,8 +5,8 @@
     <h1><%= @workspace.name %></h1>
   </div>
   <div class="card-price">
-    <h3><%= @workspace.neighborhood %>
-    <%= @workspace.price %>€</h3>
+    <h1>
+    €<%= @workspace.price %>/day</h1>
   </div>
 </div>
 
@@ -23,7 +23,7 @@
 <div class="card-infos">
   <div class="infos">
     <h5><%= @workspace.address %></h5>
-    <h5><%= @workspace.neighborhood %> - Hosted by <%= @workspace.user.username %></h5>
+    <h5><%= @workspace.neighborhood %> - Hosted by <%= @workspace.user.first_name %></h5>
   </div>
   <div class="show-btn">
       <%= link_to "Book this workspace", new_workspace_booking_path(@workspace), class:"book-btn" %>
