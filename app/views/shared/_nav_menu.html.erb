@@ -10,23 +10,7 @@
           <%= link_to "Book a Workspace", workspaces_path, class: "btn btn-outline-secondary spacing" %>
         </li>
 
-          <% if user_signed_in? %>
-            <li class="nav-item dropdown">
-                  <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                  <%= link_to "Action", "#", class: "dropdown-item" %>
-                  <%= link_to "Another action", "#", class: "dropdown-item" %>
-                  <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
-          <% else %>
-                <li class="nav-item">
-                <%= link_to "Sign-Up", new_user_registration_path, class: "btn btn-outline-warning spacing" %>
-                </li>
-                <li class="nav-item">
-                  <%= link_to "Login", new_user_session_path, class: "btn btn-outline-info spacing", title: "Login" %>
-                </li>
-                </div>
-            </li>
-          <% end %>
+          
       </div>
       </ul>
 
