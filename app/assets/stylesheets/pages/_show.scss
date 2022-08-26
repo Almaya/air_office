@@ -37,12 +37,13 @@
   position: relative;
   margin-top: 11px;
 
-  h1 {
+}
+
+.card-intro h1{
     font-style: "Work Sans", Helvetica, "Sans Serif";
     font-size: 40px;
     font-weight: bold;
-  }
-
+    color: #043249;
 }
 .card-infos {
   padding: 16px 5px;
@@ -50,10 +51,10 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
+}
 
-  p {
-    font-style: bold;
-  }
+.card-infos .infos h5{
+  color: #043249;
 }
 
 
@@ -66,8 +67,6 @@
   text-decoration: none;
   text-align: left;
   opacity: 0.6;
-
-
 }
 
 .back-btn:hover {
@@ -93,8 +92,8 @@
   text-decoration: none;
   margin: 5px;
   text-align: center;
-
 }
+
 .book-btn:hover {
   background: #03283a;
   color: white;
@@ -119,6 +118,7 @@
   color: #03283a;
   font-weight: bold;
   border: 2px solid #043249;
+  margin: 4px;
 
 }
 
@@ -137,4 +137,6 @@
 .delete-btn:hover {
   color: red;
   border: 2px solid red;
+  margin: 4px;
+
 }
