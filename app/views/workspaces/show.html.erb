@@ -1,5 +1,6 @@
 <%= link_to "Back to list page", workspaces_path, class:"back-btn" %>
 
+
 <div class="card-intro">
   <div class="card-title">
     <h1><%= @workspace.name %></h1>
@@ -13,13 +14,25 @@
     <% end %>
 </div>
 
-<h3><%= @workspace.neighborhood %>
-<%= @workspace.price %>€</h3>
 
-<p><%= @workspace.address %></p>
+<div class="card-intro">
+  <div class="card-title">
+    <h1><%= @workspace.name %></h1>
+  </div>
+  <div class="card-price">
+    <h3><%= @workspace.neighborhood %>
+    <%= @workspace.price %>€</h3>
+  </div>
+</div>
 
-<p>Hosted by <%= @workspace.user.username %></p>
 
+<div class="image-container">
+    <% @workspace.photos.each do |photo| %>
+      <div class="images">
+          <%= cl_image_tag photo.key, crop: :fill %>
+      </div>
+    <% end %>
+</div>
 
 <div class="card-infos">
   <div class="infos">

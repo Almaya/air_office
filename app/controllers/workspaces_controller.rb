@@ -2,10 +2,20 @@ class WorkspacesController < ApplicationController
   # before_action :workspace_id
 
   def index
+
     if params[:query].present?
       @workspaces = Workspace.global_search(params[:query])
     else
       @workspaces = Workspace.all
+    end
+    
+    # Geocoding
+    @markers = @workspaces.geocoded.map do |workspace|
+      {
+        lat: workspace.latitude,
+        lng: workspace.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {workspace: workspace})
+      }
     end
   end
 
@@ -30,7 +40,7 @@ class WorkspacesController < ApplicationController
 
   def edit
     # if @workspace.user == current_user
-      @workspace = Workspace.find(params[:id])
+    @workspace = Workspace.find(params[:id])
     # else
     #   render :show, status: :unprocessable_entity
     # end
@@ -38,6 +48,7 @@ class WorkspacesController < ApplicationController
 
   def update
     @workspace = Workspace.find(params[:id])
+    # raise
     if @workspace.update(ws_params)
       redirect_to workspace_path(@workspace)
     else
@@ -60,6 +71,6 @@ class WorkspacesController < ApplicationController
 
 
   def ws_params
-    params.require(:workspace).permit(:name, :address, :neighborhood, :price, photos: [])
+    params.require(:workspace).permit(:name, :address, :neighborhood, :price, :latitude, :longitude, photos: [])
   end
 end
