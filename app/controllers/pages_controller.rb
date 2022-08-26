@@ -3,3 +3,4 @@ class PagesController < ApplicationController
     @workspaces = Workspace.all
   end
 end
+
