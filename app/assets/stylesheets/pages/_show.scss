@@ -6,12 +6,13 @@
 }
 
 .image-container{
-  width: 0 auto;
+  width: fit-content;
   height: 400px;
   background-color: pink;
   display: flex;
   justify-content: space-between;
   box-shadow: rgba(99, 99, 99, 117%) 0px 2px 8px 0px;
+
 
   // width: 540px;
   // // height: 300px;
