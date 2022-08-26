@@ -24,7 +24,7 @@
                     <%= image_tag "alice.jpeg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                   <%= link_to "Become a Host", new_workspace_path, class: "dropdown-item"   %>
-                  <%= link_to "Booking List", "#", class: "dropdown-item" %>
+                  <%= link_to "Booking List", bookings_path, class: "dropdown-item" %>
                   <%= link_to "Help Center", "#", class: "dropdown-item" %>
                   <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
                 <% else %>
