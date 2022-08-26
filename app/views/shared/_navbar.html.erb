@@ -15,16 +15,17 @@
               <% end %>
             <ul class="navbar-nav me-auto">
 
-                    <li class="nav-item active">
-                      <%= link_to "Become a Host", new_workspace_path, class: "nav-link" %>
-                    </li>
                 <% if user_signed_in? %>
+                    <li class="nav-link">
+                          <%= current_user.username.capitalize %>
+                    </li>
 
                         <li class="nav-item dropdown">
-                    <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                    <%= image_tag "alice.jpeg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                  <%= link_to "Action", "#", class: "dropdown-item" %>
-                  <%= link_to "Another action", "#", class: "dropdown-item" %>
+                  <%= link_to "Become a Host", new_workspace_path, class: "dropdown-item"   %>
+                  <%= link_to "Booking List", "#", class: "dropdown-item" %>
+                  <%= link_to "Help Center", "#", class: "dropdown-item" %>
                   <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
                 <% else %>
                     <li class="nav-item">
