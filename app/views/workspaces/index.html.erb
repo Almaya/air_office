@@ -25,7 +25,7 @@
             <%= link_to workspace.name, workspace_path(workspace) %>,
             <%= workspace.neighborhood %>,
           </h2>
-          <h2><%= workspace.price %>€</h2>
+          <h2>€<%= workspace.price.round %></h2>
         </div>
       </div>
     <% end %>

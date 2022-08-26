@@ -11,7 +11,7 @@
   grid-gap: 20px;
   padding: 40px;
   height: fit-content;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .container-page {
@@ -67,7 +67,7 @@
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
     height: fit-content;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     grid-template-columns: 1fr;
   }
 }
@@ -76,7 +76,7 @@
 @media (min-width: 576px) {
   .cards {
     height: fit-content;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     grid-template-columns: 1fr;
   }
 }
@@ -85,7 +85,7 @@
 @media (min-width: 768px) {
   .cards {
     height: fit-content;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -94,7 +94,7 @@
 @media (min-width: 992px) {
   .cards {
     height: fit-content;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
@@ -103,7 +103,7 @@
 @media (min-width: 1200px) {
   .cards {
     height: fit-content;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
